@@ -29,4 +29,22 @@ if [ "$MYSQL_ADMIN_USER" == "" ]; then
 fi
 echo ... done setting up MySQL user.
 
+echo 'Setting up Database for WP ...'
+WP_SQL_USER="wp_dbuser_$(pwgen -A 8 1)"
+WP_SQL_PASS=$(pwgen -cnsv 20 1)
+echo "export Wordpress_Database_USER=$WP_SQL_USER" >> /root/.envrc
+echo "export Wordpress_Database_PASS=$WP_SQL_PASS" >> /root/.envrc
+
+mysql -e "CREATE DATABASE wordpress;"
+echo ... done creating Wordpress Database.
+
+mysql -e "CREATE USER ${WP_SQL_USER}@localhost IDENTIFIED BY '${WP_SQL_PASS}';"
+mysql -e "GRANT ALL PRIVILEGES ON wordpress.* TO ${WP_SQL_USER}@localhost"
+
+echo ... done setting up MySQL user.
+
+
+mysql -e "FLUSH PRIVILEGES;"
+
+
 echo ... done installing MySQL / MariaDB server!
