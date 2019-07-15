@@ -88,7 +88,7 @@ echo done.
 
 printf '%-72s' "Fetching wp-in-a-box repo..."
 if [ ! -d $local_wp_in_a_box_repo ] ; then
-    git clone -q --recursive https://github.com/pothi/wp-in-a-box $local_wp_in_a_box_repo &> /dev/null
+    git clone -q --recursive https://github.com/Daniel-Dietz/wp-in-a-box $local_wp_in_a_box_repo &> /dev/null
 else
     git -C $local_wp_in_a_box_repo pull -q origin master &> /dev/null
     git -C $local_wp_in_a_box_repo pull -q --recurse-submodules &> /dev/null
@@ -120,6 +120,9 @@ echo
 # post-install steps
 codename=`lsb_release -c -s`
 case "$codename" in
+    "buster")
+        source $local_wp_in_a_box_repo/scripts/post-install-bionic.sh
+        ;;
     "bionic")
         source $local_wp_in_a_box_repo/scripts/post-install-bionic.sh
         ;;
