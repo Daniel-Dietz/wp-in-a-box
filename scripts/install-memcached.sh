@@ -8,7 +8,7 @@ if [ "$MEMCACHED_MEM_LIMIT" == "" ]; then
     MEMCACHED_MEM_LIMIT=64
 fi
 
-PHP_VER=7.0
+PHP_VER=7.3
 PHP_INI=/etc/php/${PHP_VER}/fpm/php.ini
 
 # Memcached server

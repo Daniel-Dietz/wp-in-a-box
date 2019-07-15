@@ -57,6 +57,9 @@ fi
 
 codename=`lsb_release -c -s`
 case "$codename" in
+    "buster")
+        php_version=7.3
+        ;;
     "bionic")
         php_version=7.2
         ;;
@@ -103,6 +106,17 @@ if [ "$php_version" = "7.2" ] ; then
     echo Note on mcrypt
     echo --------------
     echo mycrypt is removed in PHP 7.2
+    echo Please check if any plugins or theme still use mcrypt by running...
+    echo 'find ~/wproot/wp-content/ -type f -name "*.php" -exec grep -inr mcrypt {} \;'
+    echo
+fi
+
+if [ "$php_version" = "7.3" ] ; then
+    # todo: https://stackoverflow.com/questions/48275494/issue-in-installing-php7-2-mcrypt
+    echo
+    echo Note on mcrypt
+    echo --------------
+    echo mycrypt was removed in PHP 7.2
     echo Please check if any plugins or theme still use mcrypt by running...
     echo 'find ~/wproot/wp-content/ -type f -name "*.php" -exec grep -inr mcrypt {} \;'
     echo
