@@ -3,7 +3,7 @@
 # programming env: these switches turn some bugs into errors
 # set -o errexit -o pipefail -o noclobber -o nounset
 
-# Version: 2.2
+# Version: 2.3
 
 # to be run as root, probably as a user-script just after a server is installed
 
@@ -75,6 +75,10 @@ sudo apt-get -qq install git &> /dev/null
 echo done.
 git config --global --replace-all user.email "$EMAIL"
 git config --global --replace-all user.name "$NAME"
+
+printf '%-72s' "Installing wget..."
+sudo apt-get -qq install wget &> /dev/null
+echo done.
 
 printf '%-72s' "Installing etckeeper..."
 # sending the output to /dev/null to reduce the noise
