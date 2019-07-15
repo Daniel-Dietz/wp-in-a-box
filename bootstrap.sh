@@ -80,8 +80,9 @@ printf '%-72s' "Installing wget..."
 sudo apt-get -qq install wget &> /dev/null
 echo done.
 
+# Required for Key import for Nginx
 printf '%-72s' "Installing gnupg..."
-sudo apt-get install gnupg &> /dev/null
+sudo apt-get -qq install gnupg &> /dev/null
 echo done.
 
 printf '%-72s' "Installing etckeeper..."
