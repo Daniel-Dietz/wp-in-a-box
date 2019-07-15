@@ -37,6 +37,8 @@ required_packages="acl \
     fail2ban \
     sudo \
     tzdata \
+    gnupg \
+    wget \
     unzip"
 
 for package in $required_packages

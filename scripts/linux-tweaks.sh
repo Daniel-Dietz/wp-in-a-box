@@ -122,11 +122,16 @@ cp /etc/skel/.vimrc ${HOME}/
 sudo mkdir /root/.vim &> /dev/null
 sudo cp /etc/skel/.vimrc /root/
 
-# Vim related configs
-VIM_VERSION=$(/usr/bin/vim --version | head -1 | awk {'print $5'} | tr -d .)
-cp $local_wp_in_a_box_repo/config/vimrc.local /etc/vim/
-cp -a $local_wp_in_a_box_repo/config/vim/* /usr/share/vim/vim${VIM_VERSION}/
-sed -i "s/VIM_VERSION/$VIM_VERSION/g" /etc/vim/vimrc.local
+## Check if Vim is installed - Can't make better what is not there
+
+if type vim >/dev/null 2>/dev/null; then
+    # Vim related configs
+    VIM_VERSION=$(/usr/bin/vim --version | head -1 | awk {'print $5'} | tr -d .)
+    cp $local_wp_in_a_box_repo/config/vimrc.local /etc/vim/
+    cp -a $local_wp_in_a_box_repo/config/vim/* /usr/share/vim/vim${VIM_VERSION}/
+    sed -i "s/VIM_VERSION/$VIM_VERSION/g" /etc/vim/vimrc.local
+fi
+
 
 # Clean up
 # rm -rf $local_wp_in_a_box_repo/
