@@ -1,3 +1,7 @@
+# Why this Fork?
+
+This is a Fork to maintain support for Debian 10.0 (Buster) incl. some small adoptions to work with a blank netinstall image without any additional packages
+
 # WP In A Box
 
 Script/s to install LEMP in a linux box. This LEMP stack is fine-tuned towards WordPress installations. It may work for other PHP based applications, too. For more details, please see the blog post at [https://www.tinywp.in/wp-in-a-box/](https://www.tinywp.in/wp-in-a-box/).
