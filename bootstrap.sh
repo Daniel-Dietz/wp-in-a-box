@@ -80,6 +80,10 @@ printf '%-72s' "Installing wget..."
 sudo apt-get -qq install wget &> /dev/null
 echo done.
 
+printf '%-72s' "Installing gnupg..."
+sudo apt-get install gnupg &> /dev/null
+echo done.
+
 printf '%-72s' "Installing etckeeper..."
 # sending the output to /dev/null to reduce the noise
 sudo apt-get -qq install etckeeper &> /dev/null
