@@ -2,7 +2,7 @@
 
 Script/s to install LEMP in a linux box. This LEMP stack is fine-tuned towards WordPress installations. It may work for other PHP based applications, too. For more details, please see the blog post at [https://www.tinywp.in/wp-in-a-box/](https://www.tinywp.in/wp-in-a-box/).
 
-There are a number of similar scripts available on the internet. The unique feature of this repo is in [security considerations](https://github.com/pothi/wp-in-a-box#security-considerations).
+There are a number of similar scripts available on the internet. The unique feature of this repo is in [security considerations](https://github.com/Daniel-Dietz/wp-in-a-box#security-considerations).
 
 ## Supported Platforms
 
@@ -67,12 +67,12 @@ In sync with WordPress philosophy of “[decision, not options](https://wordpres
 apt install curl screen -y
 
 # optional steps
-# curl -LO https://github.com/pothi/wp-in-a-box/raw/master/.envrc-sample
+# curl -LO https://github.com/Daniel-Dietz/wp-in-a-box/raw/master/.envrc-sample
 # cp .envrc-sample .envrc
 # nano .envrc
 
 # download the bootstrap script
-curl -LO https://github.com/pothi/wp-in-a-box/raw/master/bootstrap.sh
+curl -LO https://github.com/Daniel-Dietz/wp-in-a-box/raw/master/bootstrap.sh
 
 # please do not trust any script on the internet or github
 # so, please go through it!
@@ -116,4 +116,4 @@ You may find the following details at `~/.envrc` file...
 
 ## Wiki
 
-For more documentation, information, supported/tested hosts, todo, etc, please see the [WP-In-A-Box wiki](https://github.com/pothi/wp-in-a-box/wiki).
+For more documentation, information, supported/tested hosts, todo, etc, please see the [WP-In-A-Box wiki](https://github.com/Daniel-Dietz/wp-in-a-box/wiki).
