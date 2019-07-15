@@ -2,5 +2,6 @@
 
 # post-install script for Debian
 
-apt-get install certbot -q -y
-
+printf '%-72s' "Installing Certbot..."
+apt-get -qq install certbot &> /dev/null
+echo done.
