@@ -8,4 +8,4 @@ echo done.
 
 
 
- mv /etc/nginx/conf.d/default.conf /etc/nginx/sites-available/default_from_conf_d_folder.conf
+mv /etc/nginx/conf.d/default.conf /etc/nginx/sites-available/default_from_conf_d_folder.conf
